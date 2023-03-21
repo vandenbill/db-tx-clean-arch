@@ -3,8 +3,7 @@ agnostic in clean architecture
 
 basically just make a wrapper func for db transaction mode (manual commit) and switch the executor from auto-commit to manual commit executor and check if there is err in wrapper func we do rollback to maintaining data integration
 
-this example we use the famous orm, gorm library
-in gorm, if we want to manual-commit transaction we can just make concrite gorm.DB struct and call Begin() method from DB struct, it will return db transaction executor(manual commit) that we use to replace the default executor(auto-commit)
+this example we use the famous orm, gorm library, if we want to manual-commit transaction we can just make concrite gorm.DB struct and call Begin() method from DB struct, it will return db transaction executor(manual commit) that we use to replace the default executor(auto-commit)
 this operation is happen in wrapper
 
 ```
